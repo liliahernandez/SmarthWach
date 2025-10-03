@@ -2,7 +2,6 @@
  * take a look at https://github.com/android/wear-os-samples/tree/main/ComposeStarter to find the
  * most up to date changes to the libraries and their usages.
  */
-
 package com.example.smarthwach.presentation
 import android.content.Intent
 import android.os.Bundle
