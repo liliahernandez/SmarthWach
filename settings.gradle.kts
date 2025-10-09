@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "SmarthWach"
 include(":app")
- 
+include(":celular")

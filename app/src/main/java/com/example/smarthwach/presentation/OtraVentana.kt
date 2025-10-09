@@ -8,21 +8,28 @@ import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.os.Bundle
-import android.util.Log
+import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.core.app.ActivityCompat
 import com.example.smarthwach.R
 
 class OtraVentana : ComponentActivity(), SensorEventListener {
+
     private lateinit var sensorManager: SensorManager
     private var sensor: Sensor? = null
-    private val sensorType = Sensor.TYPE_ACCELEROMETER
+    private val sensorType = Sensor.TYPE_HEART_RATE  // ✅ Sensor de ritmo cardiaco
+    private lateinit var textView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.otra_ventana)
+
+        // Referencia al TextView
+        textView = findViewById(R.id.sensorText)
+
+        // Configurar el sensor
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
         sensor = sensorManager.getDefaultSensor(sensorType)
-        setContentView(R.layout.otra_ventana)
 
         startSensor()
     }
@@ -36,17 +43,19 @@ class OtraVentana : ComponentActivity(), SensorEventListener {
 
         sensor?.let {
             sensorManager.registerListener(this, it, SensorManager.SENSOR_DELAY_NORMAL)
+        } ?: run {
+            textView.text = "No se encontró sensor de ritmo cardíaco en este dispositivo"
         }
     }
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
-        // Puedes implementar algo aquí si quieres
+        // Aquí podrías mostrar si la precisión cambió
     }
 
     override fun onSensorChanged(event: SensorEvent?) {
         if (event?.sensor?.type == sensorType) {
-            val lectura = event.values[0]
-            Log.d("onSensorChanged", "Lectura: $lectura")
+            val heartRate = event.values[0].toInt()
+            textView.text = "Ritmo cardíaco: $heartRate bpm"
         }
     }
 
@@ -62,4 +71,3 @@ class OtraVentana : ComponentActivity(), SensorEventListener {
         }
     }
 }
-
