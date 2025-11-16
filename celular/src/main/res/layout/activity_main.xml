@@ -20,7 +20,7 @@
         android:id="@+id/iconEstado"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:src="@drawable/ic_watch"
+        android:src="@drawable/tokio"
         android:layout_marginBottom="16dp" />
 
     <Button
