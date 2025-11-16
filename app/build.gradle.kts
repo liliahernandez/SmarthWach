@@ -40,7 +40,7 @@ android {
 }
 
 dependencies {
-
+    implementation("com.google.android.gms:play-services-wearable:18.1.0")
     implementation(libs.play.services.wearable)
     implementation(platform(libs.compose.bom))
     implementation(libs.ui)
@@ -57,8 +57,8 @@ dependencies {
     implementation(libs.horologist.compose.tools)
     implementation(libs.horologist.tiles)
     implementation(libs.watchface.complications.data.source.ktx)
-    implementation(libs.constraintlayout)
     androidTestImplementation(platform(libs.compose.bom))
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     androidTestImplementation(libs.ui.test.junit4)
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)

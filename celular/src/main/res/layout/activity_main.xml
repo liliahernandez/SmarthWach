@@ -1,19 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal"
+    android:padding="24dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_degradado">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Smartwatch Monitor"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#1B5E20"
+        android:layout_marginBottom="16dp" />
+
+    <ImageView
+        android:id="@+id/iconEstado"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/ic_watch"
+        android:layout_marginBottom="16dp" />
 
     <Button
         android:id="@+id/boton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Conectar con reloj"
+        android:textSize="15sp"
+        android:textColor="@android:color/white"
+        android:background="@drawable/boton_verde"
+        android:padding="14dp" />
+
+    <ProgressBar
+        android:id="@+id/progreso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Conectar..."
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_marginTop="12dp"
+        android:visibility="gone" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#BDBDBD"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/textinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estado: Desconectado"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:textColor="#333333" />
+
+    <TextView
+        android:id="@+id/textDetalles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="14sp"
+        android:layout_marginTop="8dp"
+        android:textColor="#555555" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#BDBDBD"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/textDatos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Esperando datos del reloj..."
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:layout_marginTop="24dp"
+        android:background="#E8F5E9"
+        android:textColor="#1B5E20" />
+
+    <Button
+        android:id="@+id/botonEnviar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registrar datos"
+        android:textSize="15sp"
+        android:textColor="@android:color/white"
+        android:background="@drawable/boton_azul"
+        android:padding="14dp"
+        android:layout_marginTop="24dp" />
+
+</LinearLayout>
