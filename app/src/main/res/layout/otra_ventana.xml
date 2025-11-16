@@ -4,16 +4,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp">
+    android:padding="12dp"
+    android:background="#ECEFF1">
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Monitor de Salud"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
         android:id="@+id/textoHeart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ritmo cardiaco: --- bpm"
-        android:textSize="13sp"
-        android:padding="2dp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:text="❤️ Ritmo: --- bpm"
+        android:textSize="14sp"
+        android:padding="4dp"
+        app:layout_constraintTop_toBottomOf="@id/titulo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -21,9 +34,9 @@
         android:id="@+id/textoAccel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Acelerómetro: --- m/s²"
-        android:textSize="13sp"
-        android:padding="2dp"
+        android:text="📡 Acelerómetro: --- m/s²"
+        android:textSize="14sp"
+        android:padding="4dp"
         app:layout_constraintTop_toBottomOf="@id/textoHeart"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -32,9 +45,11 @@
         android:id="@+id/botonConectar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Conectar"
-        android:textSize="12sp"
-        android:padding="4dp"
+        android:text="🔗 Conectar"
+        android:textSize="13sp"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#009688"
+        android:padding="6dp"
         app:layout_constraintTop_toBottomOf="@id/textoAccel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -43,9 +58,11 @@
         android:id="@+id/botonEnviar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enviar"
-        android:textSize="12sp"
-        android:padding="4dp"
+        android:text="📤 Enviar datos"
+        android:textSize="13sp"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#3F51B5"
+        android:padding="6dp"
         app:layout_constraintTop_toBottomOf="@id/botonConectar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
